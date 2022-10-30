@@ -1,0 +1,21 @@
+/*
+ * \file      doc.c
+ * \brief     Create doc.
+ * \details   This class is used to demonstrate a number of section commands.
+ * \author    John Doe
+ * \version   4.1a
+ * \date      1990-2011
+ * \pre       First initialize the system.
+ * \bug       Not all memory is freed when deleting an object of this class.
+ * \warning   Improper use can crash your application
+ * \copyright GNU Public License.
+ */
+#include "doc.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void affich(liste_t *l) ;
+void insertEnd(liste_t *l, cellule_t *c) ;
+void addStart(liste_t *l, cellule_t *c) ;
+void freeListe(liste_t *l) ;
+cellule_t *newCellule(char *s) ;

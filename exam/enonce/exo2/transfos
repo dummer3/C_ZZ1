@@ -1,0 +1,20 @@
+<h1>
+ Enonce de l'exercice
+</h1>
+
+<h2>
+ Description
+</h2>
+
+Cet <i>examen</i> vise a traduire un fichier <i>markdown</i> en <i>html</i>
+
+<h2>
+ Fonctions <b>outils</b>
+</h2>
+Il faut tout d'abord <i>ecrire</i> et <i>tester</i> des <b>fonctions outils</b> sans lecture de fichier
+
+<h2>
+ Integration
+</h2>
+
+Il va falloir ensuite etre capable de <b>lire</b> ce fichier en md et de le <b>comparer</b> a un fichier resultat ecrit en HTML.

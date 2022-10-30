@@ -1,0 +1,89 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		p, h1, h2, table, li {
+		 font-family: "Arial";
+		}
+
+	</style>
+</head>
+<body>
+<h1>Exercice 1 : crible d’Ératosthène</h1>
+
+<h2>Principe</h2>
+
+<p>Le crible d’Ératosthène est un procédé qui permet de trouver tous les nombres premiers inférieurs à un certain entier naturel donné n. L’algorithme procède par élimination : il s’agit de trouver le premier entier non supprimé puis supprimer tous ses multiples, à l’exception de lui même. À la fin, il ne restera que les nombres premiers. Par exemple,  pour n = 20,  on obtient à la fin l’ensemble des nombres premiers compris entre 2 et 19.</p>
+
+
+
+<p>On va utiliser un tableau de booléens (VRAI/1 ou FAUX/0) pour l'implémentation de cet algorithme. On initialise le tableau à VRAI sauf pour les positions 0 et 1 car ni 0 ni 1 ne sont premiers.</p>
+
+<style>
+	table {
+		margin :auto;
+		border-collapse: collapse;
+	}
+	td {
+		width:2em;
+		border:1px solid black;
+		margin:0;
+		text-align:center;
+	}
+	.green {
+		color : green;
+	}
+</style>
+
+<table>
+<tr>
+  <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+</tr>
+
+<tr>
+  <td>F</td><td>F</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td><td class="green">V</td>
+</tr>
+</table>
+<P>On cherche la position de la première case à VRAI : 2. On met à FAUX tous les multiples de 2 strictement supérieurs à 2.</P>
+
+<table>
+<tr>
+  <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+</tr>
+
+<tr>
+  <td>F</td><td>F</td><td class="green">V</td><td class="green">V</td><td>F</td><td class="green">V</td><td>F</td><td class="green">V</td><td>F</td><td class="green">V</td><td>F</td><td class="green">V</td><td>F</td><td class="green">V</td><td>F</td><td class="green">V</td><td>F</td><td class="green">V</td><td>F</td><td class="green">V</td>
+</tr>
+</table>
+
+<p>On cherche la position de la première case à VRAI après 2 : 3.
+On met à FAUX tous les multiples de 3 strictement supérieurs à 3.</p>
+
+<table>
+<tr>
+  <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+</tr>
+
+<tr>
+  <td>F</td><td>F</td><td class="green">V</td><td class="green">V</td><td>F</td><td class="green">V</td><td>F</td><td class="green">V</td><td>F</td><td>F</td><td>F</td><td class="green">V</td><td>F</td><td class="green">V</td><td>F</td><td>F</td><td>F</td><td class="green">V</td><td>F</td><td class="green">V</td>
+</tr>
+</table>
+
+<p>On continue jusqu’à ce qu’il n’y ait plus de prochaine case à VRAI. Le tableau est donc complet : chaque position à VRAI est un nombre premier.</p>
+
+<h2>Notes sur le travail à réaliser</h2>
+
+<ul>
+  <li>Le test <b>INIT1</b> permet de vérifier l'initialisation d'un tableau statique avec tous ses éléments à VRAI sauf les deux premiers qui sont égaux à FAUX</li>
+  <li>Le test <b>INIT2</b> vérifie que la fonction <code>init()</code> marche aussi avec un tableau à allouer dynamiquement</li>
+  <li>Le test <b>AFF1</b> affiche dans un fichier, par exemple la sortie standard <code>stdout</code>, les nombres du tableau dont la valeur est VRAI. Il n'est pas demandé d'ouvrir le fichier.</li>
+  <li>Le test <b>SUPP2</b> affiche le même tableau lorsque les multiples de 2 sont supprimés</li>
+  <li>Le test <b>SUPP3</b> affiche le même tableau lorsque les multiples de 3 sont supprimés</li>
+  <li>Le test <b>SUPP2_3</b> affiche le même tableau lorsque les multiples de 2 et de 3 sont supprimés</li>
+  <li>Le test <b>PROCHAIN</b> permet de donner le prochain nombre à VRAI dans le tableau</li>
+  <li>Les tests <b>FINAL?</b> permettent de bien vérifier que les différentes étapes du crible ont été respectées et que la liste des nombres premiers est correcte. La fonction <code>listeNombrePremiers()</code> renvoie le nombre de nombres premiers de la liste (en plus de l'affichage de cette liste)</li>
+ </ul>
+
+<p>L'affiche de la liste des nombres se fait avec un seul espace entre les nombres. La chaine n'a pas d'espace à la fin.</p>
+
+</body></html>

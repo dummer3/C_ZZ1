@@ -1,0 +1,81 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		p, h1, h2, table, li {
+		 font-family: "Arial";
+		}
+
+	</style>
+</head>
+<body>
+<h1>Exercice 2 : traduction partielle d'un fichier markdown en html</h1>
+
+<h2>Principe</h2>
+
+<p>Un fichier au format markdown (d'extension .md) est un fichier TEXTE qui contient des informations simples pour mettre en forme le texte. Ce format de fichier se veut "compréhensible" par toute personne qui en a un peu l'habitude.</p>
+
+<code><pre>
+# texte avec un entete principal
+
+un paragraphe de texte avec un texte **important**.
+
+il peut y avoir plein de choses : liens, listes, tableaux...
+</pre></code>
+
+
+<p>Il est relativement classique de convertir un tel fichier en un fichier au format HTML affichable par un navigateur web.</p>
+
+<p>Pour redonner quelques éléments sur le langage HTML vus pendant les semaines bloquées, le language HTML est un langage à balises (encore appelées tags) : &lt;balise&gt; et &lt;/balise&gt;. Les balises peuvent être imbriquées :</p>
+<code><pre>
+	&lt;balise1&gt;&lt;balise2&gt;&lt;/balise2&gt;&lt;/balise1&gt;
+</pre>
+</code>
+<p>mais elles ne peuvent pas se croiser.</p>
+<code><pre>
+	&lt;balise1&gt;&lt;balise2&gt;&lt;/balise1&gt;&lt;/balise2&gt;
+</pre>
+</code>
+<p>Vous n'allez pas réaliser la traduction complète entre les deux formats. L'idée va être de lire un fichier texte, de détecter les entêtes (ou headers), les zones importantes (emphasis) à écrire en italique et les zones encore plus importantes (strong emphasis) à écrire en gras.</p>
+
+<p>Un exemple de fichier markdown est donné par <a href="exemple.md">exemple.md</a>.</p>
+<p>Une traduction partielle est donnée par <a href="exemple.html">exemple.html</a>.</p>
+
+<h2>Notes sur le travail à réaliser</h2>
+
+<p>Vous allez procéder en différentes étapes : </p>
+<ul>
+	<li>travail préliminaire : détection des entêtes sur une ligne, détection des types d'emphase</li>
+	<li>lecture d'un fichier source</li>
+	<li>écriture du fichier de travail</li>
+	<li>la transformation globale dans les limites fixées</li>
+</ul>
+
+<h3>Travail préliminaire</h3>
+
+<p>Les entêtes commencent par un ou plusieurs caractères #. S'il n'y a qu'un seul #, c'est le titre de plus haut niveau que l'on appelle h1 en HTML. Plus il y a de #, moins le niveau est important (h2 est moins important que h1 et h6 est moins important que h5).</p>
+
+<p>Dans un premier temps, vous allez vous contenter de détecter les entêtes, dans les dernières questions, vous ajouterez les balises correspondantes.</p>
+
+<p>Une emphase en markdown est un texte encadré par des étoiles ou tirets simples *texte* ou _texte_ et doit être affichée en italique en html : &lt;i&gt;texte&lt;/i&gt;</p>
+
+<p>Une emphase forte en markdown est un texte encadré par des étoiles ou tirets doubles **texte** ou __texte__ et doit être affichée en gras (bold) en html : &lt;b&gt;texte&lt;/b&gt;</p>
+
+<h3>Travail avec un fichier</h3>
+
+<p>Pour la suite de l'exercice, vous allez devoir <b>CHOISIR</b> un format de fichier à lire ou à écrire. Dans tous les cas, les lignes ont une longueur maximale 
+que l'on n'atteindra pas (ce serait facile dans le cas contraire de s'arranger pour diviser les lignes trop grandes).</p>
+
+<p>Le premier format de fichier est une matrice de caractères où la taille des lignes et le nombre des lignes sont fixées statiquement (à la compilation). Là encore, on supposera que les fichiers à lire et à écrire ont le bon nombre de lignes. La dernière ligne du fichier contiendra le caractère <b>EOF</b>.</p>
+
+<p>Le second format de fichier est une liste chaînée de lignes. Le nombre de lignes est déterminé à l'exécution (dynamiquement). Si vous réussissez tous les tests, ce format vous permettra d'atteindre la note maximale.</p>
+
+<p>Les opérations à réaliser avec les fichiers sont : </p>
+<ul>
+	<li>la lecture à partir d'un fichier texte</li>
+	<li>l'écriture dans un flux de type <code>FILE *</code> par exemple <code>stdout</code> pour voir ce que l'on fait</li>
+	<li>il faudra également être en mesure d'insérer des lignes dans le fichier</li>
+	<li>le cas échéant, il faudra rendre la mémoire demandée</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,10 @@
+L'examen de C comprend 2 exercices. Chaque énonce est dans le répertoire sous le nom index.html.
+
+
+Ne modifiez pas les noms de fichers et à part les commentaires ou de l'affichage, ne modifiez pas en profondeur les fichiers de tests. Pour l'évaluation, seuls les codes des code.c seront retenus et confrontés à des tests unitaires qui ne sont pas ceux que vous avez aujourd'hui.
+
+Tous les tests doivent fonctionner en même temps (il n'y en a pas d'incompatibles entre eux)
+
+Si un exercice ne compile pas, la note de 0 sera automatiquement attribuée à l'exercice.
+
+BON COURAGE !!!
